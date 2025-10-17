@@ -1,0 +1,7 @@
+.form-table tr:not(:last-child) td {
+    padding-bottom: .25rem;
+}
+
+.form-table tr>td:first-child {
+    padding-right: .25rem;
+}
