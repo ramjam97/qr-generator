@@ -20,6 +20,8 @@ const App = () => {
     const [colorBackground, setColorBackground] = useState("#ffffff");
 
 
+    const [isGenerating, setIsGenerating] = useState(false);
+
     const generateQR = async () => {
         try {
             const qr = new AwesomeQR({
@@ -38,6 +40,8 @@ const App = () => {
             setQrDataUrl(dataUrl as string);
         } catch (err) {
             console.error("QR generation failed:", err);
+        } finally {
+            setIsGenerating(false);
         }
     };
 
@@ -75,6 +79,7 @@ const App = () => {
 
     let timeout: any;
     useEffect(() => {
+        setIsGenerating(true);
         timeout = setTimeout(() => {
             console.log('generating qr..');
             generateQR();
@@ -188,7 +193,7 @@ const App = () => {
 
                     </div>
 
-                    <Preview qrDataUrl={qrDataUrl} size={size} />
+                    <Preview qrDataUrl={qrDataUrl} size={size} isGenerating={isGenerating} />
 
                 </div>
 

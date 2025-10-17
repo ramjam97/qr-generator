@@ -2,9 +2,10 @@
 interface PreviewProps {
     qrDataUrl: string;
     size: number;
+    isGenerating: boolean
 }
 
-const Preview = ({ qrDataUrl, size }: PreviewProps) => {
+const Preview = ({ qrDataUrl, size, isGenerating }: PreviewProps) => {
 
     const handleDownload = () => {
         if (!qrDataUrl) return;
@@ -25,7 +26,7 @@ const Preview = ({ qrDataUrl, size }: PreviewProps) => {
 
             <h5 className="font-bold text-secondary text-center py-2">OUTPUT</h5>
 
-            {qrDataUrl ? <>
+            {(qrDataUrl && !isGenerating) ? <>
                 <img src={qrDataUrl} alt="QR code" className={skeletonClass} height={size} width={size} />
                 <button className="btn btn-primary btn-sm mt-2" onClick={handleDownload}>Download QR</button>
             </> : <div className={skeletonClass} style={skeletonStyle} />}
