@@ -1,4 +1,3 @@
-
 interface PreviewProps {
     qrDataUrl: string;
     size: number;

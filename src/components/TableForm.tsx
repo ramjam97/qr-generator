@@ -1,4 +1,3 @@
-
 const TableForm = ({ children }: { children: React.ReactNode }) => {
     return <>
         <table className="form-table w-full">
