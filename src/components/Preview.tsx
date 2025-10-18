@@ -1,10 +1,9 @@
-interface PreviewProps {
-    qrDataUrl: string;
-    size: number;
-    isGenerating: boolean
-}
+import AppContext from "@/Context/AppContext";
+import { useContext } from "react";
 
-const Preview = ({ qrDataUrl, size, isGenerating }: PreviewProps) => {
+const Preview = () => {
+
+    const { qrDataUrl, size, isGenerating } = useContext(AppContext);
 
     const handleDownload = () => {
         if (!qrDataUrl) return;

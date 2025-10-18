@@ -73,7 +73,7 @@ const App = () => {
                     <h5 className="text-3xl text-center text-primary font-bold mb-3">QR Generator</h5>
                     <div className="flex flex-row flex-wrap gap-3 justify-center items-start">
                         <FormGenerator />
-                        <Preview qrDataUrl={qrDataUrl} size={size} isGenerating={isGenerating} />
+                        <Preview />
                     </div>
                 </div>
                 <Footer />
