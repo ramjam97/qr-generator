@@ -1,5 +1,5 @@
 import AppContext from "@/Context/AppContext";
-import { useContext } from "react"
+import { useContext, useRef } from "react"
 import TableForm, { TableFormRow } from "@/components/TableForm";
 import { strToFloatAbs, strToIntAbs } from "@/utils/my-utils";
 
@@ -16,8 +16,11 @@ const FormGenerator = () => {
         color, setColor
     } = useContext(AppContext);
 
-    const handleLogoFileUpload = (e: React.ChangeEvent<HTMLInputElement>) => {
-        const file = e.target.files?.[0];
+    const logoRef = useRef<HTMLInputElement>(null);
+
+    const handleLogoFileUpload = () => {
+        if (!logoRef.current) return;
+        const file = logoRef.current.files?.[0];
         if (!file) {
             setLogo(null);
             return;
@@ -27,8 +30,13 @@ const FormGenerator = () => {
         reader.readAsDataURL(file);
     }
 
+    const removeLogo = () => {
+        setLogo(null);
+        if (logoRef.current) logoRef.current.value = '';
+    }
+
     return <>
-        <div className="card bg-base-300 p-4 flex flex-col gap-2 shadow-lg">
+        <div className="card bg-base-300 p-4 flex flex-col gap-3 shadow-lg">
 
             <h5 className="font-bold text-secondary text-center py-2">INPUT</h5>
 
@@ -55,15 +63,28 @@ const FormGenerator = () => {
                 </TableFormRow>
 
                 <TableFormRow label="Logo:">
-                    <input type="file" className="file-input" accept="image/*" onChange={handleLogoFileUpload} />
+                    <input type="file" className="file-input" accept="image/*" ref={logoRef} onChange={handleLogoFileUpload} />
                 </TableFormRow>
 
             </TableForm>
 
             {logo && <>
-                <div className="border border-base-100 p-4 rounded shadow-lg">
+                <div className="border border-base-100 p-4 rounded">
                     <h5 className="font-bold text-secondary text-center py-2 pb-4">Logo Settings</h5>
                     <TableForm>
+
+                        <TableFormRow label="Margin:">
+                            <div className="flex flex-row justify-center items-center border border-base-100 shadow-lg rounded relative">
+                                <span className="absolute top-1 right-1">
+                                    <button className="btn btn-circle btn-neutral btn-xs" onClick={removeLogo}>
+                                        <i className="pi pi-times"></i>
+                                    </button>
+                                </span>
+                                <div className="max-w-[180px]">
+                                    <img src={logo} alt="logo" />
+                                </div>
+                            </div>
+                        </TableFormRow>
 
                         <TableFormRow label="Margin:">
                             <input type="number" className="input" placeholder="margin"
