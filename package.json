@@ -1,7 +1,7 @@
 {
   "name": "qr-generator",
   "private": true,
-  "version": "1.0.0",
+  "version": "1.0.1",
   "homepage": "https://ramjam97.github.io/qr-generator/",
   "type": "module",
   "scripts": {
