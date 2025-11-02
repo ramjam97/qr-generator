@@ -1,54 +1,41 @@
-# React + TypeScript + Vite
+# Simple QR Generator
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A simple QR generator built with React, Vite, and AwesomeQR.
 
-Currently, two official plugins are available:
+[![Hits](https://hits.sh/ramjam97.github.io/qr-generator.svg)](https://hits.sh/ramjam97.github.io/qr-generator/)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Features
 
-## Expanding the ESLint configuration
+* Generate QR codes with text, size, margin, color, and logo
+* Download generated QR codes as PNG images
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## Installation
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+* Clone the repository
+* Run `npm install` to install dependencies
+* Run `npm run dev` to start the development server
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## Usage
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+* Open the application in your web browser
+* Enter the text you want to generate a QR code for
+* Choose the size, margin, color, and logo for the QR code
+* Click the "Generate QR" button to generate the QR code
+* Click the "Download QR" button to download the generated QR code as a PNG image
 
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
-```
+## Demo
+
+You can try the demo here: https://ramjam97.github.io/qr-generator/
+
+## Technologies Used
+
+* React
+* Vite
+* AwesomeQR
+* DaisyUI
+* PrimeIcons
+
+## License
+
+This project is licensed under the MIT License. See the LICENSE file for details.
+

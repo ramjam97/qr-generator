@@ -23,20 +23,18 @@ const Preview = () => {
     const skeletonClass = 'skeleton border border-base-300 rounded-none';
     const skeletonStyle = { height: actualSize, width: actualSize };
 
-    return <>
-        <div className="card bg-base-100 border border-base-300 shadow-lg flex flex-col items-center gap-3 p-4">
+    return <div className="card bg-base-100 border border-base-300 shadow-lg flex flex-col items-center gap-3 p-4">
 
-            <h5 className="font-bold text-secondary text-center py-2">OUTPUT</h5>
+        <h5 className="font-bold text-secondary text-center py-2">OUTPUT</h5>
 
-            {isLoading
-                ? <div className={skeletonClass} style={skeletonStyle} />
-                : <img src={qrDataUrl} alt="QR code" className={skeletonClass} height={actualSize} width={actualSize} />
-            }
+        {isLoading
+            ? <div className={skeletonClass} style={skeletonStyle} />
+            : <img src={qrDataUrl} alt="QR code" className={skeletonClass} height={actualSize} width={actualSize} />
+        }
 
-            <button disabled={isLoading} className="btn btn-primary btn-sm mt-2" onClick={handleDownload}>Download QR</button>
+        <button disabled={isLoading} className="btn btn-primary btn-sm mt-2" onClick={handleDownload}>Download QR</button>
 
-        </div>
-    </>
+    </div>
 }
 
 export default Preview
