@@ -10,7 +10,7 @@ const defaultSize = 300;
 const App = () => {
 
     const [qrDataUrl, setQrDataUrl] = useState<string>("");
-    const [text, setText] = useState("https://ramjam97.github.io/ram-jamolod");
+    const [text, setText] = useState("https://ramjam97.github.io");
     const [size, setSize] = useState(defaultSize);
     const [margin, setMargin] = useState(10);
     const [color, setColor] = useState("#000000");
