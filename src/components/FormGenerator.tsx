@@ -3,7 +3,7 @@ import { useContext, useRef } from "react"
 import TableForm, { TableFormRow } from "@/components/TableForm";
 import { strToFloatAbs, strToIntAbs } from "@/utils/my-utils";
 
-const FormGenerator = () => {
+export default function FormGenerator() {
 
     const {
         text, setText,
@@ -112,5 +112,3 @@ const FormGenerator = () => {
 
     </>
 }
-
-export default FormGenerator

@@ -1,7 +1,7 @@
 import AppContext from "@/Context/AppContext";
 import { useContext, useMemo } from "react";
 
-const Preview = () => {
+export default function Preview() {
 
     const { qrDataUrl, size, isGenerating } = useContext(AppContext);
 
@@ -36,5 +36,3 @@ const Preview = () => {
 
     </div>
 }
-
-export default Preview

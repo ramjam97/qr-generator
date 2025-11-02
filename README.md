@@ -1,8 +1,8 @@
+[![Hits](https://hits.sh/ramjam97.github.io/qr-generator.svg)](https://hits.sh/ramjam97.github.io/qr-generator/)
+
 # Simple QR Generator
 
 A simple QR generator built with React, Vite, and AwesomeQR.
-
-[![Hits](https://hits.sh/ramjam97.github.io/qr-generator.svg)](https://hits.sh/ramjam97.github.io/qr-generator/)
 
 ## Features
 
@@ -26,6 +26,9 @@ A simple QR generator built with React, Vite, and AwesomeQR.
 ## Demo
 
 You can try the demo here: https://ramjam97.github.io/qr-generator/
+
+Example view:
+![](https://ramjam97.github.io/qr-generator/qr-preview.png)
 
 ## Technologies Used
 

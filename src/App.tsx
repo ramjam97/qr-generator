@@ -7,7 +7,7 @@ import FormGenerator from "./components/FormGenerator";
 
 const defaultSize = 300;
 
-const App = () => {
+export default function App() {
 
     const [qrDataUrl, setQrDataUrl] = useState<string>("");
     const [text, setText] = useState("https://ramjam97.github.io");
@@ -81,5 +81,3 @@ const App = () => {
         </AppContext.Provider>
     </>
 }
-
-export default App
