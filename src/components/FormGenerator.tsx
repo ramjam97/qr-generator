@@ -43,8 +43,10 @@ export default function FormGenerator() {
             <TableForm>
 
                 <TableFormRow label="Content:">
-                    <input type="text" className="input" placeholder="Type here" value={text}
-                        onChange={(e) => setText(e.target.value)} />
+                    <textarea placeholder="Type here"
+                        onChange={(e) => setText(e.target.value)}
+                        value={text}
+                        className="textarea"></textarea>
                 </TableFormRow>
 
                 <TableFormRow label="Color:">

@@ -6,7 +6,7 @@ export default function TableForm({ children }: { children: React.ReactNode }) {
 
 export const TableFormRow = ({ label, children }: { label?: string, children: React.ReactNode }) => {
     return <tr>
-        <td>{label}</td>
+        <td style={{ verticalAlign: 'top' }}>{label}</td>
         <td>{children}</td>
     </tr>
 }
