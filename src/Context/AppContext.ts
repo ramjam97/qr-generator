@@ -1,35 +1,21 @@
 import { createContext } from "react";
+import type QRCodeStyling from "qr-code-styling";
 
 export interface AppContextProps {
-    qrDataUrl: string;
-    setQrDataUrl: React.Dispatch<React.SetStateAction<string>>;
 
-    text: string
-    setText: React.Dispatch<React.SetStateAction<string>>
+    isGenerating: boolean;
+    setIsGenerating: React.Dispatch<React.SetStateAction<boolean>>;
+
+    qrDataUrl: string;
+    setQrDataUrl: React.Dispatch<React.SetStateAction<string>>
+
+    qrInstance: QRCodeStyling;
 
     size: number;
     setSize: React.Dispatch<React.SetStateAction<number>>;
 
-    margin: number;
-    setMargin: React.Dispatch<React.SetStateAction<number>>;
-
-    color: string;
-    setColor: React.Dispatch<React.SetStateAction<string>>;
-
-    logo: string
-    setLogo: React.Dispatch<React.SetStateAction<string>>
-
-    logoCornerRadius: number;
-    setLogoCornerRadius: React.Dispatch<React.SetStateAction<number>>;
-
-    logoMargin: number;
-    setLogoMargin: React.Dispatch<React.SetStateAction<number>>;
-
-    logoScale: number;
-    setLogoScale: React.Dispatch<React.SetStateAction<number>>;
-
-    isGenerating: boolean;
-    setIsGenerating: React.Dispatch<React.SetStateAction<boolean>>;
+    errorMessage: string | null;
+    setErrorMessage: React.Dispatch<React.SetStateAction<string | null>>;
 }
 
 const AppContext = createContext<AppContextProps>(null);

@@ -1,7 +1,7 @@
 {
   "name": "qr-generator",
   "private": true,
-  "version": "1.0.6",
+  "version": "2.0.0",
   "type": "module",
   "scripts": {
     "dev": "vite",
@@ -11,10 +11,10 @@
   },
   "dependencies": {
     "@tailwindcss/vite": "^4.1.14",
-    "awesome-qr": "^2.1.5-rc.0",
     "daisyui": "^5.2.2",
     "dotenv": "^17.2.3",
     "primeicons": "^7.0.0",
+    "qr-code-styling": "^1.9.2",
     "react": "^19.1.0",
     "react-dom": "^19.1.0",
     "tailwindcss": "^4.1.14"
