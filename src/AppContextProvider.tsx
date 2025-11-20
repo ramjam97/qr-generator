@@ -1,7 +1,7 @@
 import { useState } from 'react'
-import AppContext from './context/AppContext'
 import QRCodeStyling from 'qr-code-styling';
-import { defaultSize } from './App';
+import AppContext from '@/context/AppContext'
+import { defaultSize } from '@/App';
 
 export default function AppContextProvider({ children }: { children: React.ReactNode }) {
 
